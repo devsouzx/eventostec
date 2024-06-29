@@ -1,7 +1,7 @@
 package com.devsouzx.api.controller;
 
 import com.devsouzx.api.domain.coupon.Coupon;
-import com.devsouzx.api.domain.event.CouponRequestDTO;
+import com.devsouzx.api.domain.coupon.CouponRequestDTO;
 import com.devsouzx.api.services.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

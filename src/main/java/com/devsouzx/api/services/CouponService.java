@@ -1,7 +1,7 @@
 package com.devsouzx.api.services;
 
 import com.devsouzx.api.domain.coupon.Coupon;
-import com.devsouzx.api.domain.event.CouponRequestDTO;
+import com.devsouzx.api.domain.coupon.CouponRequestDTO;
 import com.devsouzx.api.domain.event.Event;
 import com.devsouzx.api.repositories.CouponRepository;
 import com.devsouzx.api.repositories.EventRepository;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -29,5 +30,9 @@ public class CouponService {
         coupon.setEvent(event);
 
         return couponRepository.save(coupon);
+    }
+
+    public List<Coupon> consultCoupons(UUID eventId, Date currentDate) {
+        return couponRepository.findByEventIdAndValidAfter(eventId, currentDate);
     }
 }

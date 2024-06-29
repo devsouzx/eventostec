@@ -1,4 +1,4 @@
-package com.devsouzx.api.domain.event;
+package com.devsouzx.api.domain.coupon;
 
 public record CouponRequestDTO(String code, Integer discount, Long valid) {
 }
